@@ -14,7 +14,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.use(bodyParser.json());
 app.use(cors());
 app.get('/', function (req, res) {
@@ -22,14 +21,9 @@ app.get('/', function (req, res) {
 });
 
 app.use('/api',require('./Routes/index'));
-// mongodb+srv://cluster0.titcwjb.mongodb.net/myFirstDatabase" --apiVersion 1 --username Nayeli
-// mongodb+srv://Leonardo:Leoespro217@spotyficopy.ptmc72m.mongodb.net/?retryWrites=true&w=majority
-// mongodb+srv://cluster0.titcwjb.mongodb.net/myFirstDatabase 
 mongoose.connect('mongodb+srv://Nayeli:Capgemini21@cluster0.titcwjb.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    //useFindAndModify: false,
-    //useCreateIndex: true
+    useUnifiedTopology: true
   }, (err, res) => {
     if (err) throw err;
     console.log('BD Nutritec');
